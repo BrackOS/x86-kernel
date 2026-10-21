@@ -46,7 +46,7 @@ sudo apt-get install build-essential nasm grub-common xorriso qemu-system-x86
 make clean && make iso
 ```
 
-Creates `myos.iso` (bootable ISO image).
+Creates `BrackOS.iso` (bootable ISO image).
 
 ---
 
@@ -58,15 +58,15 @@ make run
 
 Or manually:
 ```bash
-qemu-system-i386 -cdrom myos.iso
+qemu-system-i386 -cdrom BrackOS.iso
 ```
 
 Output:
 ```
-MyOS booted successfully.
+BrackOS booted successfully.
 Type 'help' for a list of commands.
 
-myos> █
+BrackOS> █
 ```
 
 Exit QEMU: `Ctrl+A` then `X`
@@ -77,7 +77,7 @@ Exit QEMU: `Ctrl+A` then `X`
 
 1. Write ISO to USB:
    - Download [Balena Etcher](https://www.balena.io/etcher/)
-   - Select `myos.iso`
+   - Select `BrackOS.iso`
    - Select USB drive
    - Click "Flash"
 
@@ -90,9 +90,9 @@ Exit QEMU: `Ctrl+A` then `X`
 
 3. Use the shell:
    ```
-   myos> help
-   myos> echo Hello from MyOS!
-   myos> clear
+   BrackOS> help
+   BrackOS> echo Hello from BrackOS!
+   BrackOS> clear
    ```
 
 ---
@@ -105,7 +105,7 @@ Displays available commands.
 ### `echo <text>`
 Prints text to screen. Example:
 ```
-myos> echo Hello World
+BrackOS> echo Hello World
 Hello World
 ```
 
@@ -213,7 +213,7 @@ Displays error in red: `error: unknown command: [input]`
 
 ### GRUB Configuration
 - **Boot protocol:** Multiboot1
-- **Kernel image:** `/boot/myos.bin`
+- **Kernel image:** `/boot/BrackOS.bin`
 - **Graphics:** Handled by BIOS/UEFI firmware
 - **Timeout:** 0 seconds (immediate boot)
 
